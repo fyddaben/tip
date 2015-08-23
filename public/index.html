@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ag</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="./css/angular-material.css" />
+  <link rel="stylesheet" href="./css/index.min.css">
+</head>
+<body ng-app="MyTipApp">
+  <div class="main">
+    <div ng-controller="EditArticleController" layout='column'>
+      <md-content>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>
+              <span>编辑区域</span>
+            </h2>
+          </div>
+        </md-toolbar>
+      </md-content>
+      <form name ='articleForm' >
+        <md-input-container>
+          <label>编辑人</label>
+          <md-select ng-model="currentUser">
+            <md-option ng-repeat="user in userList" value="{{user}}">{{user}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container flex>
+          <label>标题</label>
+          <input ng-model="title" required>
+        </md-input-container>
+        <md-input-container>
+          <label>内容</label>
+          <textarea ng-model="content" required></textarea>
+        </md-input-container>
+      </form>
+      <div layout='row' >
+        <md-button class='md-raised' ng-disabled="articleForm.$invalid" ng-click='showDialog($event)'>预览</md-button>
+        <md-button ng-click="save()" ng-disabled="articleForm.$invalid" class="md-raised md-primary" >保存</md-button>
+      </div>
+    </div>
+  </div>
+  <script  type="text/ng-template" id="article.html">
+    <md-dialog aria-label="Mango (Fruit)">
+      <form>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2 >{{title}}</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeDialog()">
+              <md-icon md-svg-src="./img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+            </div>
+          </md-toolbar>
+          <md-dialog-content style="max-width:800px;max-height:810px; ">
+            <div ng-bind-html='markContent'>
+            </div>
+          </md-dialog-content>
+          <div class="md-actions" layout="row">
+            <span flex></span>
+            <md-button >
+              保存
+            </md-button>
+          </div>
+        </form>
+      </md-dialog>
+
+    </script>
+    <script src="./js/angular.js"></script>
+    <script src="./js/angular-animate.js"></script>
+    <script src="./js/angular-resource.min.js"></script>
+    <script src="./js/angular-aria.js"></script>
+    <script src="./js/angular-material.js"></script>
+    <script src="./js/markdown.js"></script>
+    <script src='./js/index.min.js'>
+    </script>
+  </body>
+</html>
