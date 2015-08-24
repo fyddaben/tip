@@ -46,10 +46,25 @@ function EditArticle($scope, $mdDialog, Articles, $sce) {
   $scope.showDialog = showDialog;
   function save() {
     var are = new Articles();
-    are.user = $scope.currentUser;
+    are.author = $scope.currentUser;
     are.title = $scope.title;
     are.content = $scope.content;
-    are.$save();
+    are.$save(function(res) {
+      $mdDialog.hide();
+      var code = parseInt(res.code);
+      if (code === 200) {
+        var alert = $mdDialog.alert({
+          title: '恭喜您',
+          content: '插入成功!',
+          ok: 'I Got It!'
+        });
+        $mdDialog
+          .show( alert )
+          .finally(function() {
+            alert = undefined;
+          });
+        }
+    });
   }
   $scope.save = save;
 }
