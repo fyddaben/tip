@@ -4,6 +4,7 @@ var Articles = mongoose.Schema({
   art_id:Number,
   title:String,
   content:String,
+  markContent:String,
   createTime:String,
   author:String
 });

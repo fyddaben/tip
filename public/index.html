@@ -5,8 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ag</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="./css/angular-material.css" />
-  <link rel="stylesheet" href="./css/index.min.css">
+  <link rel="stylesheet" href="<%=config.staticSite%>/css/angular-material.css" />
+  <link rel="stylesheet" href="<%=config.staticSite%>/css/index.min.css">
+  <script>
+    var article = false;
+    <% if (article) {%>
+     article = <%-JSON.stringify(article)%> ;
+    <%}%>
+  </script>
 </head>
 <body ng-app="MyTipApp">
   <div class="main">
@@ -29,7 +35,7 @@
         </md-input-container>
         <md-input-container flex>
           <label>标题</label>
-          <input ng-model="title" required>
+          <input ng-model="title"  required>
         </md-input-container>
         <md-input-container>
           <label>内容</label>
@@ -68,13 +74,12 @@
       </md-dialog>
 
     </script>
-    <script src="./js/angular.js"></script>
-    <script src="./js/angular-animate.js"></script>
-    <script src="./js/angular-resource.min.js"></script>
-    <script src="./js/angular-aria.js"></script>
-    <script src="./js/angular-material.js"></script>
-    <script src="./js/markdown.js"></script>
-    <script src='./js/index.min.js'>
-    </script>
+    <script src="<%=config.staticSite%>/js/angular.js"></script>
+    <script src="<%=config.staticSite%>/js/angular-animate.js"></script>
+    <script src="<%=config.staticSite%>/js/angular-resource.min.js"></script>
+    <script src="<%=config.staticSite%>/js/angular-aria.js"></script>
+    <script src="<%=config.staticSite%>/js/angular-material.js"></script>
+    <script src="<%=config.staticSite%>/js/markdown.js"></script>
+    <script src="<%=config.staticSite%>/js/index.min.js"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@ function add_zero(temp) {
     else return temp;
 }
 var Util = {
+  staticSite:'http://tip.mi.com',
   currentDate:function(){
 
     var d=new Date();

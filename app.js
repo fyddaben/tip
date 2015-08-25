@@ -27,8 +27,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 
 //修改接口
+//获取列表
 app.get('/article', routes.query);
+
+//详情页面
+app.get('/article/:id', routes.get);
+
+//编辑页面
+app.get('/article/edit/:id', routes.getEdit);
+
+//保存接口
 app.post('/article', routes.save);
+
+//修改接口
 app.put('/article/:id', routes.update);
 
 http.createServer(app).listen(app.get('port'), function() {
