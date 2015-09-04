@@ -1,5 +1,12 @@
 # Alfred小工具`mitip`制作总结
+## 预览
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hhMQRpjPVmg" frameborder="0" allowfullscreen></iframe>
 
+<video id="video" controls="" preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
+<source id="mp4" src="https://www.youtube.com/embed/hhMQRpjPVmg" type="video/mp4">
+      
+<p>Your user agent does not support the HTML5 Video element.</p>
+</video>
 ## 主体流程规划
 ```flow
 st=>start: mp keyword
