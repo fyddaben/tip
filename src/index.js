@@ -64,7 +64,7 @@ function EditArticle($scope, $mdDialog, Articles, $sce) {
       .show( alert )
       .finally(function() {
         alert = undefined;
-        location.href = 'http://tip.mi.com/article/'+res.areId;
+        location.href = 'http://tip.mi.com/detail/'+res.areId;
       });
 
     }

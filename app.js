@@ -28,10 +28,10 @@ app.get('/', routes.index);
 
 //修改接口
 //获取列表
-app.get('/article', routes.query);
+app.get('/article/:content', routes.query);
 
 //详情页面
-app.get('/article/:id', routes.get);
+app.get('/detail/:id', routes.get);
 
 //编辑页面
 app.get('/article/edit/:id', routes.getEdit);
